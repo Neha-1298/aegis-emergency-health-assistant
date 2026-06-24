@@ -1,3 +1,4 @@
+```js
 import 'dotenv/config';
 
 import app from './app.js';
@@ -43,21 +44,18 @@ app.listen(
       }
     } else {
       console.log(
-        'Arduino connection is disabled.'
+        'Arduino connection is disabled for this environment.'
       );
     }
 
     try {
       await connectDatabase();
-
-      console.log(
-        'Database startup completed.'
-      );
     } catch (error) {
       console.error(
-        'Database startup failed:',
+        'Database startup error:',
         error.message
       );
     }
   }
 );
+```
